@@ -1,0 +1,16 @@
+<view class="main-view">
+  <view class="left-view">
+    <view wx:for="{{buses}}" wx:key="{{item}}">
+
+    </view>
+  </view>
+
+  <view class="right-view">
+    <view wx:for="{{stops}}" wx:key="{{item}}">
+      <view class="right-view-item">
+        <view>{{item.stopName}}</view>
+      </view>
+    </view>
+  </view>
+
+</view>
