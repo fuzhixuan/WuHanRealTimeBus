@@ -11,7 +11,8 @@ Page({
     stops: [],
     buses: null,
     midViewImg: "",
-    count: 0
+    count: 0,
+    animTimer: null
   },
 
   /**
@@ -46,11 +47,14 @@ Page({
     });
 
     timeOut(that);
+  },
+  onUnload: function(options) {
+    clearInterval(this.data.animTimer);
   }
 });
 
 function timeOut(that) {
-  setTimeout(function () {
+  that.data.animTimer = setTimeout(function () {
     var t = (that.data.count + 1) % (that.data.stops.length * 2 - 1);
 
     that.setData({
