@@ -1,9 +1,13 @@
 .left-view {
-  flex: 2;
+  flex: 1.5;
 }
 
 .right-view {
   flex: 8;
+}
+
+.mid-view {
+  flex: 0.5;
 }
 
 .main-view {
@@ -13,11 +17,27 @@
 }
 
 .right-view-item {
-  margin-top: 20.8px;
+  margin-bottom: 21px;
+}
+
+.left-view-item {
+  height: 21px;
 }
 
 .bus-img {
-  width: 20.8px;
-  height: 20.8px;
-  display: block;
+  width: 21px;
+  height: 21px;
+  position: absolute;
+  right: 30px;
+}
+
+.bus-mul {
+  display: flex;
+  position: absolute;
+  right: 5px;
+}
+
+.bus {
+  display: flex;
+  position: relative;
 }

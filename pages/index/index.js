@@ -4,10 +4,6 @@ const app = getApp()
 
 Page({
   data: {
-    // motto: 'Hello World',
-    // userInfo: {},
-    // hasUserInfo: false,
-    // canIUse: wx.canIUse('button.open-type.getUserInfo'),
     busName: "",
     lines: []
   },
@@ -86,7 +82,7 @@ Page({
 
       wx.request({
         method: "GET",
-        url: 'http://127.0.0.1:8080/realTimeBus/getBusLines?busName=' + this.data.busName,
+        url: app.globalData.getBusLinesURL + this.data.busName,
         success: function(res) {
           var lines = res.data.data.lines;
           console.log(lines);

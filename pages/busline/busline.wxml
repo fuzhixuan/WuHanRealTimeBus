@@ -1,14 +1,41 @@
 <view class="main-view">
   <view class="left-view">
-    <view wx:for="{{buses}}" wx:key="{{item}}">
+    <view wx:for="{{buses}}" wx:key="key" wx:for-item="value" class="left-view-item">
+      <view wx:if="{{value == 0}}">
+        <image class="bus-img" src=""></image>
+      </view>
+      <view wx:else>
+        <view wx:if="{{key % 2 == 1}}" class="bus">
+          <image class="bus-img" src="/images/bus01.png"></image>
+          <view class="bus-mul" wx:if="{{value >= 1}}">
+            x{{value}}
+          </view>
+        </view>
+        <view wx:else class="bus">
+          <image class="bus-img" src="/images/bus02.png"></image>
+          <view class="bus-mul" wx:if="{{value >= 1}}">
+            x{{value}}
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
 
+  <view class="mid-view">
+    <view wx:for="{{buses}}" class="mid-view-img" wx:for-index="key">
+      <view wx:if="{{key == count || key == count - 1 || key == count + 1}}">
+        <text style="color: #f00;">{{midViewImg}}</text>
+      </view>
+      <view wx:else>
+        {{midViewImg}}
+      </view>
     </view>
   </view>
 
   <view class="right-view">
     <view wx:for="{{stops}}" wx:key="{{item}}">
       <view class="right-view-item">
-        <view>{{item.stopName}}</view>
+        <view>{{item.stopName}}{{buses.length}}</view>
       </view>
     </view>
   </view>

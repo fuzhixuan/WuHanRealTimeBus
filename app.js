@@ -34,6 +34,8 @@ App({
     })
   },
   globalData: {
-    userInfo: null
+    userInfo: null,
+    getBusLinesURL: "http://fuyuanzz.com:8080/realTimeBus/getBusLines?busName=",
+    getStopsURL: "http://fuyuanzz.com:8080/realTimeBus/getRealBusInfo?lineId="
   }
 })
