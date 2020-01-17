@@ -58,7 +58,7 @@ function timeOut(that) {
     var t = (that.data.count + 1) % (that.data.stops.length * 2 - 1);
 
     that.setData({
-      midViewImg: "v",
+      midViewImg: "▼",
       count: t
     });
 
