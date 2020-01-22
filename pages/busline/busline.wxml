@@ -1,6 +1,13 @@
+<view class="top-view">
+  <image src="/images/bus01.png" class="top-bus01"></image>代表“
+  <text class="top-bus01-text">已到站</text>”
+  <image src="/images/bus02.png" class="top-bus02"></image>代表“
+  <text class="top-bus02-text">在路上</text>”
+</view>
+
 <view class="main-view">
   <view class="left-view">
-    <view wx:for="{{buses}}" wx:key="key" wx:for-item="value" class="left-view-item">
+    <view wx:for="{{buses}}" wx:for-index="key" wx:for-item="value" class="left-view-item" wx:key="key1">
       <view wx:if="{{value == 0}}">
         <image class="bus-img" src=""></image>
       </view>
@@ -23,21 +30,21 @@
 
   <view class="mid-view">
     <view wx:for="{{buses}}" class="mid-view-img" wx:for-index="key">
-      <view wx:if="{{key == count || key == count - 1 || key == count + 1}}">
-        <text style="color: #f00;">{{midViewImg}}</text>
+      <view wx:if="{{key == count || key == count - 1 || key == count + 1 || key == count -4 || key == count + 4}}">
+        <image class="mid-view-img1" src="{{midViewImgRed}}"></image>
       </view>
       <view wx:else>
-        {{midViewImg}}
+        <image class="mid-view-img2" src="{{midViewImg}}"></image>
       </view>
     </view>
   </view>
 
   <view class="right-view">
-    <view wx:for="{{stops}}" wx:key="{{item}}">
-      <view class="right-view-item">
-        <view>{{item.stopName}}{{buses.length}}</view>
-      </view>
+    <view wx:for="{{stops}}" wx:key="{{item}}" class="right-view-item">
+      <view>{{index + 1}}. {{item.stopName}}</view>
     </view>
   </view>
-
 </view>
+
+<image wx:if="{{refreshClicked}}" class="refresh-btn" src="/images/refresh-click.png"></image>
+<image wx:else class="refresh-btn" src="/images/refresh.png" bindtap="refreshClicked"></image>

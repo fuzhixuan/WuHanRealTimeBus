@@ -1,6 +1,6 @@
 .bus-name-input {
-  padding: 10px;
-  border-radius: 15px;
+  padding: 20rpx;
+  border-radius: 30rpx;
   background: #eee;
   display: flex;
   width: 100%;
@@ -8,40 +8,49 @@
 }
 
 .btn-query {
-  border-radius: 10px;
+  border-radius: 20rpx;
   display: flex;
   flex: 1;
-  margin: 5px;
+  margin-left: 20rpx;
+}
+
+.btn-query-text {
+  font-size: 35rpx;
 }
 
 .main-view {
-  margin-left: 10px;
-  margin-right: 10px;
+  margin-left: 20rpx;
+  margin-right: 20rpx;
   display: flex;
 }
 
 .item-view {
-  margin-left: 15px;
-  margin-right: 15px;
-  margin-top: 10px;
-  margin-bottom: 10px;
+  margin-left: 30rpx;
+  margin-right: 30rpx;
+  margin-top: 20rpx;
+  margin-bottom: 20rpx;
   display: flex;
 }
 
 .item-view-lineName {
   display: flex;
   color: #f00;
-  margin-right: 5px;
+  margin-right: 10rpx;
   font-weight: bold;
-  font-size: 15px;
+  font-size: 30rpx;
   align-items: center;
   line-height: 1.8;
 }
 
 .item-view-sename {
-  margin-left: 5px;
-  font-size: 15px;
+  margin-left: 10rpx;
+  font-size: 30rpx;
   display: flex;
   align-items: center;
   line-height: 1.8;
+}
+
+scroll-view {
+  margin-top: 40rpx;
+  height: 1000rpx;
 }

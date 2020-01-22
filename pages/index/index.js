@@ -71,29 +71,14 @@ Page({
         success: function(res) {}
       })
     }
-
   },
   busNameInput: function(e) {
-    if (e.detail.value != "") {
-      this.setData({
-        busName: e.detail.value
-      });
-      var that = this;
+    this.setData({
+      busName: e.detail.value
+    });
 
-      wx.request({
-        method: "GET",
-        url: app.globalData.getBusLinesURL + this.data.busName,
-        success: function(res) {
-          var lines = res.data.data.lines;
-          console.log(lines);
-          that.setData({
-            lines: lines
-          });
-        },
-        fail: function(res) {
-          console.log("出现错误：" + res);
-        }
-      });
+    if (this.data.busName != "") {
+      setBusNames(this);
     } else {
       this.setData({
         lines: []
@@ -105,5 +90,31 @@ Page({
     wx.navigateTo({
       url: '../busline/busline?lineId=' + lineId,
     });
+  },
+  queryClick: function(e) {
+    if (this.data.busName != "") {
+      setBusNames(this);
+    } else {
+      this.setData({
+        lines: []
+      });
+    }
   }
 })
+
+function setBusNames(that) {
+  wx.request({
+    method: "GET",
+    url: app.globalData.getBusLinesURL + that.data.busName,
+    success: function(res) {
+      var lines = res.data.data.lines;
+      console.log(lines);
+      that.setData({
+        lines: lines
+      });
+    },
+    fail: function(res) {
+      console.log("出现错误：" + res);
+    }
+  });
+}

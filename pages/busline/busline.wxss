@@ -8,36 +8,93 @@
 
 .mid-view {
   flex: 0.5;
+  margin-left: 20rpx;
+  margin-right: 20rpx;
 }
 
 .main-view {
-  margin: 15px;
+  margin: 15rpx;
   display: flex;
   flex-direction: row;
 }
 
 .right-view-item {
-  margin-bottom: 21px;
+  margin-bottom: 42rpx;
+  height: 42rpx;
+  max-height: 42rpx;
 }
 
 .left-view-item {
-  height: 21px;
+  height: 42rpx;
+  max-height: 42rpx;
+}
+
+.mid-view-img {
+  height: 42rpx;
+  max-height: 42rpx;
 }
 
 .bus-img {
-  width: 21px;
-  height: 21px;
+  width: 42rpx;
+  height: 42rpx;
   position: absolute;
-  right: 30px;
+  right: 30rpx;
 }
 
 .bus-mul {
   display: flex;
   position: absolute;
-  right: 5px;
+  right: 0rpx;
+  font-size: 20rpx;
 }
 
 .bus {
   display: flex;
   position: relative;
+}
+
+.top-bus01 {
+  width: 50rpx;
+  height: 50rpx;
+}
+
+.top-bus02 {
+  width: 50rpx;
+  height: 50rpx;
+}
+
+.top-view {
+  display: flex;
+  margin-bottom: 40rpx;
+  justify-content: center;
+}
+
+.top-bus01-text {
+  font-weight: bold;
+  color: #f00;
+}
+
+.top-bus02-text {
+  font-weight: bold;
+  color: #f00;
+}
+
+.mid-view-img1 {
+  width: 50rpx;
+  height: 50rpx;
+}
+
+.mid-view-img2 {
+  width: 50rpx;
+  height: 50rpx;
+}
+
+.refresh-btn {
+  position: fixed;
+  right: 60rpx;
+  bottom: 60rpx;
+  width: 80rpx;
+  height: 80rpx;
+  color: #fff;
+  border-radius: 40rpx;
 }

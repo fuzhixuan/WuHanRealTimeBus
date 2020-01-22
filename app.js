@@ -1,6 +1,6 @@
 //app.js
 App({
-  onLaunch: function () {
+  onLaunch: function() {
     // 展示本地存储能力
     var logs = wx.getStorageSync('logs') || []
     logs.unshift(Date.now())
@@ -37,5 +37,7 @@ App({
     userInfo: null,
     getBusLinesURL: "http://fuyuanzz.com/realTimeBus/getBusLines?busName=",
     getStopsURL: "http://fuyuanzz.com/realTimeBus/getRealBusInfo?lineId="
+    // getBusLinesURL: "http://localhost:80/realTimeBus/getBusLines?busName=",
+    // getStopsURL: "http://localhost:80/realTimeBus/getRealBusInfo?lineId="
   }
 })

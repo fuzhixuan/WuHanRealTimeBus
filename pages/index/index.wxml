@@ -1,16 +1,20 @@
 <view class="main-view">
   <input type="text" bindinput="busNameInput" confirm-type="search" placeholder="输入查询公交车" class="bus-name-input"></input>
-  <button bindtap="search" form-type="submit" class="btn-query" type="primary" size="mini">查询</button>
-</view>
-
-<view wx:if="{{lines && index < 10}}" wx:for="{{lines}}" wx:key="item">
-  <button bindtap="itemClick" class="item-view" data-lineid="{{item.lineId}}">
-    <view class="item-view-lineName">
-      {{item.lineName}}
-    </view>
-    :
-    <view class="item-view-sename">
-      {{item.startStopName}}-{{item.endStopName}}
-    </view>
+  <button bindtap="search" form-type="submit" class="btn-query" type="primary" size="mini" bindtap="queryClick">
+    <text class="btn-query-text">查询</text>
   </button>
 </view>
+
+<scroll-view scroll-y="true">
+  <view wx:if="{{lines && index < 10}}" wx:for="{{lines}}" wx:key="item">
+    <button bindtap="itemClick" class="item-view" data-lineid="{{item.lineId}}">
+      <view class="item-view-lineName">
+        {{item.lineName}}
+      </view>
+      :
+      <view class="item-view-sename">
+        {{item.startStopName}}-{{item.endStopName}}
+      </view>
+    </button>
+  </view>
+</scroll-view>
